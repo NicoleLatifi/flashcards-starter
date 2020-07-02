@@ -7,8 +7,6 @@ const data = require('../src/data').prototypeData;
 describe('Card', function() {
 
   it('should be a function', function() {
-    const card = new Card(data[0]);
-
     expect(Card).to.be.a('function');
   });
 

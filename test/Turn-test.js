@@ -8,9 +8,6 @@ const data = require('../src/data').prototypeData;
 describe('Turn', function() {
 
   it('should be a function', function() {
-    const card = new Card(data[0]);
-    const turn = new Turn();
-
     expect(Turn).to.be.a('function');
   });
 
