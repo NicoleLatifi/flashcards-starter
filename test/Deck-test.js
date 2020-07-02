@@ -31,7 +31,6 @@ describe('Deck', function() {
     const cardsCreated = [card1, card2, card3];
 
     const deck = new Deck(cardsCreated);
-    // console.log(deck)
 
     expect(deck.countCards()).to.equal(3);
   });
