@@ -17,9 +17,8 @@ class Game {
       let card = new Card(prototypeQuestions[i]);
       cardsCreated.push(card);
     }
-    // console.log(cardsCreated);
     const deck = new Deck(cardsCreated);
-    this.round = new Round(deck);
+    this.round = new Round(deck, turn);
     this.printMessage(deck, this.round);
     this.printQuestion(this.round);
   }

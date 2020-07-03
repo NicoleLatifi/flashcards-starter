@@ -46,39 +46,39 @@ describe('Round', function() {
 
   it('should update the turns count', function() {
 
-    round.takeTurn(turn, deck);
+    round.takeTurn(deck, turn);
 
     expect(round.turns).to.equal(1);
   });
 
   it('should make the next card becomes the current card', function() {
 
-    round.takeTurn(turn, deck);
+    round.takeTurn(deck, turn);
 
     expect(round.returnCurrentCard()).to.equal(card2);
   });
 
   it('should evaluate a guess', function() {
 
-    round.takeTurn(turn, deck);
+    round.takeTurn(deck, turn);
 
     expect(turn.evaluateGuess()).to.equal(false);
   });
 
   it('should store incorrect guesses', function() {
-    round.takeTurn(turn, deck);
+    round.takeTurn(deck, turn);
 
     expect(round.incorrectGuesses).to.deep.equal([1]);
   });
 
   it('should give feedback', function() {
-    round.takeTurn(turn, deck);
+    round.takeTurn(deck, turn);
 
     expect(turn.giveFeedback()).to.equal('incorrect!');
   });
 
   it('should calculate the percentage of correct guesses', function() {
-    round.takeTurn(turn, deck);
+    round.takeTurn(deck, turn);
 
     expect(round.calculatePercentCorrect()).to.equal(0);
   });
