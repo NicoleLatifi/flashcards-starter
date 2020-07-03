@@ -10,7 +10,7 @@ class Round{
     return this.currentCard;
   }
 
-  takeTurn = (turn, deck) => {
+  takeTurn = (deck, turn) => {
     this.turns++;
     this.currentCard = deck.cards[this.turns];
     turn.card = this.currentCard;
