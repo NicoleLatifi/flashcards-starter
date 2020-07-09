@@ -13,15 +13,12 @@ class Turn {
   };
 
   evaluateGuess() {
-    return this.guess === this.card.correctAnswer
+    console.log("CARD IN EVALUATEGUESS: ", this.card);
+    return this.guess === this.card.correctAnswer;
   }
 
   giveFeedback() {
-    // console.log(this.evaluateGuess())
-
-    // console.log("THIS.GUESS IS ", this.guess)
-    // console.log("THIS.CARD.CORRECTANSWER IS ", this.card.correctAnswer)
-
+    console.log("CARD IN GIVEFEEDBACK: ", this.card)
     if (this.evaluateGuess() === true) {
       return 'correct!';
     } else {
