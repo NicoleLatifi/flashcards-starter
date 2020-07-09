@@ -1,3 +1,5 @@
+const Turn = require('../src/Turn'); //new
+
 class Round{
   constructor(deck) {
     this.turns = 0;
@@ -10,9 +12,10 @@ class Round{
     return this.currentCard;
   }
 
-  takeTurn = (deck, turn) => {
+  takeTurn = (guess) => { //removed deck and turn parameter, changed to guess
+    const turn = new Turn(guess, this.returnCurrentCard()); //new
     this.turns++;
-    this.currentCard = deck.cards[this.turns];
+    // this.currentCard = deck.cards[this.turns]; //this was meant to change the currentCard, but deck is no longer a parameter
     turn.card = this.currentCard;
     turn.evaluateGuess();
     if (turn.guess !== turn.card.correctAnswer) {
