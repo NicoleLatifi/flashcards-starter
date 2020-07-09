@@ -5,7 +5,6 @@ const util = require('./util');
 const Card = require('../src/Card');
 const Round = require('../src/Round');
 const Deck = require('../src/Deck');
-// const Turn = require('../src/Turn');//new
 
 class Game {
   constructor(round) {
@@ -19,7 +18,6 @@ class Game {
       cardsCreated.push(card);
     }
     const deck = new Deck(cardsCreated);
-    // const turn = new Turn(guess, card);//new
     this.round = new Round(deck); //removed turn parameter
     this.printMessage(deck, this.round);
     this.printQuestion(this.round);

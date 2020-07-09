@@ -22,6 +22,7 @@ class Round{
       this.incorrectGuesses.push(this.turns);
     };
     turn.giveFeedback();
+    console.log('THE FEEDBACK IS: ', turn.giveFeedback());
   }
 
   calculatePercentCorrect = () => {

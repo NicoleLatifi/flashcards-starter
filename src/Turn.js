@@ -12,17 +12,17 @@ class Turn {
     return this.card;
   };
 
-  evaluateGuess(round) {
-    if (this.guess === this.card.correctAnswer) {
-      return true;
-    } else {
-      // round.incorrectGuesses.push(this.guess);
-      return false;
-    }
+  evaluateGuess() {
+    return this.guess === this.card.correctAnswer
   }
 
   giveFeedback() {
-    if (this.guess === this.card.correctAnswer) {
+    // console.log(this.evaluateGuess())
+
+    // console.log("THIS.GUESS IS ", this.guess)
+    // console.log("THIS.CARD.CORRECTANSWER IS ", this.card.correctAnswer)
+
+    if (this.evaluateGuess() === true) {
       return 'correct!';
     } else {
       return 'incorrect!';
