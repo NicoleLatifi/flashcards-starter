@@ -2,27 +2,25 @@ const Turn = require('../src/Turn'); //new
 
 class Round{
   constructor(deck) {
+    this.deck = deck;
     this.turns = 0;
-    this.currentCard = deck.cards[this.turns];
     this.incorrectGuesses = [];
     this.percentCorrect = 0;
   }
 
   returnCurrentCard = () => {
-    return this.currentCard;
+    return this.deck.cards[this.turns];
   }
 
-  takeTurn = (guess) => { //removed deck and turn parameter, changed to guess
-    const turn = new Turn(guess, this.returnCurrentCard()); //new
+  takeTurn = (guess) => {
+    const turn = new Turn(guess, this.returnCurrentCard());
+    console.log("CARD ARGUMENT IS: ", this.returnCurrentCard());
     this.turns++;
-    // this.currentCard = deck.cards[this.turns]; //this was meant to change the currentCard, but deck is no longer a parameter
-    turn.card = this.currentCard;
-    turn.evaluateGuess();
-    if (turn.guess !== turn.card.correctAnswer) {
-      this.incorrectGuesses.push(this.turns);
-    };
-    turn.giveFeedback();
-    console.log('THE FEEDBACK IS: ', turn.giveFeedback());
+    // turn.evaluateGuess();
+    // if (turn.guess !== turn.card.correctAnswer) {
+    //   this.incorrectGuesses.push(this.turns);
+    // };
+    return turn.giveFeedback();
   }
 
   calculatePercentCorrect = () => {
